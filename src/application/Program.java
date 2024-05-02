@@ -22,7 +22,8 @@ public class Program {
         System.out.println("Total area: " + totalArea(myCircles));
     }
 
-    public static double totalArea(List<Shape> list){   // Só funciona para lista de Shapes
+    public static double totalArea(List<? extends Shape> list){   // Só funciona para lista de Shapes
+    // Ao definir o tipo como <? extends Shape>, define que a lista dada como parâmetro pode ser de Shape ou de qualquer subtipo de Shape
         double sum = 0.0;
         for (Shape s : list){
             sum += s.area();
